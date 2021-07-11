@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital@1&family=Roboto&display=swap");
+$primary-color: white;
+$name-color: rgb(104, 103, 103);
+$focus-color: #26a7de;
+
+.main {
+    padding: 1% 3%;
+    background-color: #ebecf3;
+    font-family: "Roboto", "Poppins";
+  
+    input[type="search"] {
+      padding: 0.2rem;
+      background-color: $primary-color;
+      border: none;
+    }
+  
+    .search {
+      display: inline-flex;
+      position: relative;
+      border: 1px solid $primary-color;
+      border-radius: 8px;
+      overflow: hidden;
+      width: 100%;
+      margin: 1.5rem 0;
+      box-shadow: 0px 4px 2px 0px rgba(0, 0, 0, 0.2);
+
+      &__icon {
+        padding: 0.7rem 0.9rem;
+        font-size: 1.5rem;
+        background-color: $primary-color;
+        color: rgb(158, 153, 153);
+      }
+      &__box {
+        border: 0;
+        padding: 0.3rem 0.5rem 0.3rem 0;
+        flex: 1;
+        width: 100%;
+        font-size: .9rem;
+        outline: none;
+        color:$name-color;
+      }
+      &:focus{
+        outline: 2px solid $focus-color;
+      }
+      &::placeholder {
+        color:$name-color;
+      }
+    }
+  }
+  

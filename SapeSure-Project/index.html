@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="title" content="sapsure">
+  <meta name="description" content="Insurance website ">
+  <meta name="keywords" content="insurance,health,fees,healthcare,finance,cover,benefits">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="language" content="English">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SapeSure Dashboard</title>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+</head>
+
+<body>
+  <%= require('./src/components/header/header.html?raw')%>
+  <main class="main">
+    <%= require('./src/components/graph/graph.html?raw')%>
+    <%= require('./src/components/search/search.html?raw')%>
+    <%= require('./src/components/table/table.html?raw')%>
+  </main>
+  <%= require('./src/components/passPopup/pass.html?raw')%>
+  <%= require('./src/components/denyPopup/deny.html?raw')%>
+  <%= require('./src/components/AddClaimPopup/add.html?raw')%>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <script src="https://kit.fontawesome.com/3f56b276cb.js" crossorigin="anonymous"></script>
+  <link href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+<div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content focus-trap">
+        <i class="far fa-check-circle pass-icon"></i>
+        <p class="modal__content--msg">Are you sure you want to approve the claim?</p>
+        <p class = "modal__content--para">SapeShare will pay <span>$</span><span id="passClaimAmt"></span> to the <span id="passClaimName"></span> if the claim is passed</p>
+        <div class="range-slider">
+            <input id="myinput" type="range" value="0"/>
+        </div>  
+        <div class="modal__btn-container">
+            <button id="passCancelBtn" class="modal__btn modal__btn--cancel-p">Cancel</button>
+            <button id="passSubmitBtn" class="modal__btn modal__btn--pass">Pass Claim</button>
+        </div>            
+    </div>
+</div>

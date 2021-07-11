@@ -1,0 +1,134 @@
+$primary-color: white;
+$main-color: #9c106c;
+$focus-color: #26a7de;
+
+.modal {
+  z-index: 9999;
+  display: none;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  &__content {
+    
+    background-color: #fefefe;
+    padding: 35px;
+    border: 1px solid #fefefe;
+    text-align: center;
+    border-radius: 10px;
+    width: 100%;
+    font-family: 'Roboto';
+    
+    &--icon {
+      // width: 4rem;
+      font-size: 3rem;
+      background: #d5f5fe;
+      border-radius: 80px;
+      color: #046584; 
+      margin-top: -12px;
+    }
+
+    &--paraDeny {
+      color: grey;
+      padding-bottom: .9rem;
+      padding-top: 1.2rem;
+      font-size: .9rem;
+      span {
+        color: #000;
+        font-weight: 900;
+      }
+    }
+  }
+
+  &__comment {
+    border: 2px solid #a8a8a8;
+    width: 92%;
+    margin: 2px;
+    resize: none;
+    padding: .5rem;
+    &:focus {
+      outline: 1.5px solid $focus-color;
+    }
+  }
+  &__btn-container {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 0.5rem;
+    padding: 2rem 0 0 0;
+  }
+
+  &__btn {
+    border-radius: 0.5rem;
+    padding: 0.7rem 0;
+    font-size: large;
+    font-weight: bold;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+      border: 2px solid $focus-color;
+      border-radius: .5rem;
+    }
+    
+
+    &--cancel-d {
+      color: #0e6b8c;
+      background-color: #fafafa;
+      border: 2px solid #0e6b8c;
+    }
+
+    &--deny {
+      color: #fafafa;
+      background-color: #0e6b8c;
+      border: 2px solid #0e6b8c;
+    }
+
+    &--cancel-p {
+      color: #9c106c;
+      background-color: #fafafa;
+      border: 2px solid #9c106c;
+    }
+
+    &--pass {
+      color: #fafafa;
+      background-color: #9c106c;
+      border: 2px solid #9c106c;
+    }
+  }
+  .ErrorMsg{
+    display: none;
+    color: red;
+    font-size: .8rem;
+  }
+}
+  
+@media screen and (min-width: 481px) {
+  .modal {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    &__content{
+      width: 70%;
+      margin-top: 18%;
+      margin-left: 15%;
+    }
+    &__btn-container {
+      flex-direction: row;
+      gap: 2rem;
+      justify-content: center;
+    }
+    
+    &__btn {
+      width: 8.5rem;
+    }
+  }
+}
+
+@media screen and (min-width:769px) {
+  .modal__content{
+    width: 50%;
+    margin-left: 24%;
+    margin-top: 5%;
+  }
+  
+}
+
+  
+  
