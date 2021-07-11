@@ -1,0 +1,440 @@
+$primary-color: white;
+$main-color: #9c106c;
+$text-color: rgb(143,142,142);
+$focus-color: #26a7de;
+
+.form {
+  display: none; 
+  position: fixed;
+  z-index: 99999; 
+  padding: 2rem 0;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0, 0, 0); 
+  background-color: rgba(0, 0, 0, 0.4); 
+
+  .error {
+    margin-left: 1%;
+  }
+
+  .selected-file {
+    display: flex;
+    border: 1.5px solid $main-color;
+    align-items: center;
+    padding: 5px;
+    margin: 5px;
+    justify-content: space-between;
+    border-radius: 5px;
+    width: 95%;
+  }
+
+  .selected-file img {
+    padding: 5px 0px 0px 0px;
+    width: 50px;
+  }
+  &__content {
+    background-color: $primary-color;
+    border: 1px solid $primary-color;
+    border-radius: 10px;
+    padding: 0.5rem 0.5rem 1.5rem 0.5rem;
+    font-family: "Roboto";
+  }
+  .data {
+    &__head {
+      color: grey;
+      margin: 1rem 0;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+    &__input {
+      display: flex;
+      flex-direction: column;
+      // width: 100%;
+      height: 50%;
+      &--label {
+        font-weight: 700;
+        margin-left: 0.2rem;
+        margin-bottom: 0.3rem;
+        margin-top: 4%;
+      }
+      &--box {
+        height: 2rem;
+        margin-left: 1%;
+        padding: 3%;
+        border: 1px solid gray;
+        &:focus {
+          outline: 1px solid $focus-color;
+        }
+      }
+      &--error-dob{
+        margin-top: .5rem;
+      }
+    }
+    .radio {
+      margin-bottom: 2%;
+      &__box {
+        &-container {
+          display: inline-grid;
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+        &--btn {
+          display: inline-flex;
+          align-items: stretch;
+          margin-left: -13%;
+          margin-bottom: 4%;
+        }
+        &--input {
+          opacity: 0;
+        }
+        &--label {
+          width: 15px;
+          height: 15px;
+          border: 2px solid $main-color;
+          border-radius: 50%;
+          margin: 0 8px 0 0;
+          box-sizing: border-box;
+          padding: 4px;
+          background: #fddefa;
+          &::after {
+            content: "";
+            width: 100%;
+            height: 100%;
+            display: block;
+            background: white;
+            border-radius: 50%;
+            transform: scale(0);
+            transform: 0.15s;
+          }
+        }
+        .radio__box--input:checked + .radio__box--label::after {
+          transform: scale(1);
+        }
+        .radio__box--input:checked + .radio__box--label {
+          border: none;
+          background: $main-color;
+        }
+        .radio__box--input:focus + div{
+          outline: 1.5px solid $focus-color;
+        }
+      }
+      .gender-label{
+        font-weight: 600;
+        color: black;
+        font-size: .8rem;
+      }
+    }
+    &__file {
+      margin: 10px 0px 0px 0px;
+      &--upload {
+        input {
+          opacity: 0;
+          position: absolute;
+        }
+
+        img {
+          width: 15px;
+          height: 15px;
+          cursor: pointer;
+        }
+
+        label {
+          display: inline-flex;
+          align-items: center;
+        }
+
+        span {
+          padding: 0px 0px 0px 5px;
+          font-size: 12px;
+        }
+      }
+      &--area {
+        display: grid;
+        grid-template-columns: 100%;
+        margin: 5px 0px;
+      }
+    }
+    &__upload {
+      &--files {
+        &:focus ~ label{
+          outline: 1.5px solid $focus-color;
+        }
+      }
+      &--icon{
+        color: $text-color;
+      }
+    }
+    .fileIcon {
+      color: #9c106c;
+      font-size: 90%;
+      margin-left: -32%;
+    }
+
+    .fa-file:before {
+      content: "\f15b";
+      margin-left: 30%;
+      padding: -7%;
+      font-size: 300%;
+    }
+    .fa-times-circle:before {
+      background-color: #fdedfa;
+      border-radius: 64%;
+    }
+  
+    &__btn {
+      border-radius: 0.5rem;
+      padding: 0.7rem 0;
+      font-size: large;
+      font-weight: bold;
+      &:focus {
+        outline: none;
+        border: 2px solid $focus-color;
+        border-radius: .5rem;
+      }
+      &-container {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 0.5rem;
+        padding: 2rem 0 0 0;
+      }
+      &--cancel {
+        color: $main-color;
+        background-color: $primary-color;
+        border: 2px solid $main-color;
+      }
+
+      &--add {
+        color: #fafafa;
+        background-color: $main-color;
+        border: 2px solid $main-color;
+      }
+    }
+  }
+
+  span {
+    color: red;
+  }
+
+  .checkbox {
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .check1 {
+    display: flex;
+    flex-wrap: wrap;
+    // width: 50%;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    font-size: .8rem;
+    font-weight: 600;
+  }
+
+  .check1 input {
+    opacity: 0;
+  }
+
+  .check1 input:checked ~ .check {
+    background-color: $main-color;
+  }
+
+  .check:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+  .check1 input:checked ~ .check:after {
+    display: block;
+  }
+
+  .check1 .check:after {
+    left: 25%;
+    top: -19%;
+    width: 3px;
+    height: 8px;
+    border: solid $primary-color;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .check {
+    position: absolute;
+    top: 4%;
+    left: 4%;
+    height: 14px;
+    width: 14px;
+    background-color: #fdedfa;
+    border: 2px solid $main-color;
+  }
+  .info-checkbox:focus + span{
+    outline: 1.5px solid #1259e2;
+  }
+}
+
+#ui-datepicker-div {
+  width: 200px;
+  font-size: x-small;
+}
+
+.calendar-icon{
+  text-align: right;
+  margin-top: -1.6rem;
+  margin-right: 1rem;
+  font-size: 1.1rem;
+  color: $text-color;
+}
+.file-name{
+  font-weight: 800;
+  font-size: .8rem;
+}
+.file-size{
+  color: $text-color;
+  font-size: .7rem;
+}
+.file-icon{
+  color: $main-color;
+  font-size: 2rem;
+  padding-left: .5rem;
+}
+.remove-attached-file{
+  font-size: 1.2rem;
+  color: $main-color;
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .form {
+    position: fixed;
+    overflow: hidden;
+    &__content {
+      width: 75%;
+      margin: 10% 12%;
+      padding: 3%;
+    }
+    .error {
+      margin-left: 2%;
+      font-size: 0.75rem;
+      margin-top: -0.4rem;
+    }
+    .calendar-icon{
+      margin-top: -2.2rem;
+    }
+    .data__input--error-dob{
+      margin-top: 0.1rem;
+    }
+    .data {
+      .radio {
+        width: 64%;
+      }
+      &__head {
+        text-align: left;
+      }
+      &__input {
+        display: inline-flex;
+        gap: 10px;
+        margin: 1px;
+        &--label {
+          margin-bottom: -0.2rem;
+        }
+      }
+      &__btn {
+        width: 20%;
+        &-container {
+          flex-direction: row;
+          justify-content: flex-end;
+          gap: 2rem;
+        }
+      }
+    }
+
+    .checkbox {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
+}
+@media screen and (min-width: 769px) {
+  .form {
+    position: fixed;
+    overflow: hidden;
+    padding: 0;
+    
+    &__content {
+      width: 73%;
+      margin-left: 13%;
+      margin-top: 4%;
+    }
+    .error {
+      margin-left: 1%;
+      font-size: 0.7rem;
+    }
+
+    .selected-file {
+      width: auto;
+    }
+    .check1 {
+      padding-left: 23px;
+    }
+    .radio {
+      &__box-container {
+        display: inline-grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 23%;
+      }
+    }
+    .data {
+      &__head {
+        text-align: left;
+        margin-left: 4%;
+        margin-top: 1%;
+      }
+      &__input {
+        display: inline-flex;
+        padding: 1% 1.8%;
+        margin-left: 2.5%;
+        margin-top: -3%;
+        &--label {
+          font-weight: 700;
+          margin-left: 0.2rem;
+          font-size: 0.8rem;
+        }
+      }
+      &__file {
+        margin: 5px 59px 0px 40px;
+        &--upload{
+          font-size: 0.8rem;
+          margin-top: 0.3rem;
+        }
+        &--area {
+          display: grid;
+          grid-template-columns: 30% 30%;
+          margin: 5px 0px;
+        }
+      }
+
+      &__btn {
+        width: 16%;
+        &-container {
+          flex-direction: row;
+          justify-content: flex-end;
+          gap: 3rem;
+          margin-right: 4%;
+          margin-top: -3%;
+        }
+      }
+    }
+    .checkbox {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      margin-right: 100px;
+      width: 100%;
+      gap: 6.3%;
+      
+    }
+  }
+}

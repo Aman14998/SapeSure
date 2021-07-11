@@ -1,0 +1,185 @@
+<div id="myForm" class="form">
+    <div class= "form__container">
+        <div class="form__content focus-trap">
+            <form name="addClaim" class="data" id="addClaimForm" autocomplete="off">
+                <!--Form Heading-->
+                <h3 class="data__head">Add New Claim</h3>
+                
+                <!--First Name-->
+                <div class="data__input">
+                    <label for="txtFirstName" class="data__input--label required" id="label1">First
+                    name<span>*</span></label>
+                    <input type="text" id="txtFirstName" name="txtFirstName" aria-labelledby="label1"
+                        class="data__input--box" placeholder="e.g. John" required />
+                    <div class="data__input--error-fn error" id="data__input--error-fn">
+                        <p aria-labelledby="data__input--error-fn"></p>
+                    </div>
+                </div>
+
+                <!--Middle Name-->
+                <div class="data__input">
+                    <label for="txtMiddleName" class="data__input--label" id="label2">Middle name</label>
+                    <input type="text" id="txtMiddleName" name="txtMiddleName" aria-labelledby="label2"
+                        class="data__input--box" placeholder="e.g. Smith" />
+                    <div class="data__input--error-mn error" id="data__input--error-mn">
+                        <p aria-labelledby="data__input--error-mn"></p>
+                    </div>
+                </div>
+
+                <!--Last Name-->
+                <div class="data__input">
+                    <label for="txtLastName" class="data__input--label required" id="label3">Last
+                        name<span>*</span></label>
+                    <input type="text" id="txtLastName" name="txtLastName" aria-labelledby="label3" class="data__input--box"
+                        placeholder="e.g. Doe" required />
+                    <div class="data__input--error-ln error" id="data__input--error-ln">
+                        <p aria-labelledby="data__input--error-ln"></p>
+                    </div>
+                </div>
+
+                <!--Date of birth-->
+                <div class="data__input">
+                    <label for="txtDOB" class="data__input--label required" id="label4">Date of
+                        birth<span>*</span></label>
+                    <input type="text" id="txtDOB" name="txtDOB" aria-labelledby="label4" class="data__input--box"
+                        placeholder="MM-DD-YYYY" autocomplete="off" />
+                        <i class="fas fa-calendar-week calendar-icon"></i>
+                            
+                    <div class="data__input--error-dob error" id="data__input--error-dob">
+                        <p aria-labelledby="data__input--error-dob"></p>
+                    </div>
+                </div>
+
+                <!--Phone Number-->
+                <div class="data__input">
+                    <label for="telContact" class="data__input--label required" id="label5">Phone
+                        number<span>*</span></label>
+                    <input type="tel" id="telContact" name="telContact" aria-labelledby="label5" class="data__input--box"
+                        placeholder="XXX-XXX-XXXX" />
+                    <div class="data__input--error-contact error" id="data__input--error-contact">
+                        <p aria-labelledby="data__input--error-contact"></p>
+                    </div>
+                </div>
+
+                <!--Email-->
+                <div class="data__input">
+                    <label for="txtEmail" class="data__input--label required" id="label6">Email<span>*</span></label>
+                    <input type="email" id="txtEmail" name="txtEmail" aria-labelledby="label6" class="data__input--box"
+                        placeholder="e.g. name@domain.com" required />
+                    <div class="data__input--error-email error" id="data__input--error-email">
+                        <p aria-labelledby="data__input--error-email"></p>
+                    </div>
+                </div>
+
+                <!--Gender-->
+                <div class="data__input radio">
+                    <label for="gender" aria-label="gender" name="gender"
+                        class="data__input--label  required">Gender<span>*</span></label>
+
+                    <div id="gender" class="radio__box-container">
+                        
+                            <label for="maleRadio" class="radio__box radio__box--btn" id="label7_male">
+                                <input type="radio" id="maleRadio" name="gender" class="radio__box--input"
+                                    aria-labelledby="label7_male" />
+                                <div class="radio__box--label"></div>
+                                <span class="gender-label">Male</span>
+                            </label>
+                       
+                        <label for="femaleRadio" class="radio__box radio__box--btn" id="label7_female">
+                            <input type="radio" id="femaleRadio" name="gender" class="radio__box--input"
+                                aaria-labelledby="label7_female" />
+                            <div class="radio__box--label"></div>
+                            <span class="gender-label">Female</span>
+                        </label>
+                        <label for="otherRadio" class="radio__box radio__box--btn" id="label7_other">
+                            <input type="radio" id="otherRadio" name="gender" class="radio__box--input"
+                                aria-labelledby="label7_other" />
+                            <div class="radio__box--label"></div>
+                            <span class="gender-label">Other</span>
+                        </label>
+                    </div>
+                    <div class="data__input--error-gender error" id="data__input--error-gender">
+                        <p aria-labelledby="data__input--error-gender"></p>
+                    </div>
+                </div>
+
+                <!--Provider Name-->
+                <div class="data__input">
+                    <label for="txtProviderName" class="data__input--label required" id="label8">Provider
+                        name<span>*</span></label>
+                    <input type="text" id="txtProviderName" name="txtProviderName" aria-labelledby="label8"
+                        class="data__input--box" placeholder="e.g. Appllo Pharmaceuticals" required />
+                    <div class="data__input--error-pn error" id="data__input--error-pn">
+                        <p aria-labelledby="data__input--error-pn"></p>
+                    </div>
+                </div>
+
+                <!--Additional Information-->
+                <div class="data__input">
+                    <label for="additionalInfo" class="data__input--label" aria-label="additionalInfo">Additional
+                        Information</label>
+                    <div class="checkbox">
+                        <label for="tobacco" class="check1" id="label9_tobacco">Tobacco Use
+                            <input type="checkbox" id="tobacco" name="tobacco" aria-labelledby="label9_tobacco" class="info-checkbox" />
+                            <span class="check"></span>
+                        </label>
+
+                        <label for="diabetes" class="check1" id="label9_diabetes">Diabetes
+                            <input type="checkbox" id="diabetes" name="diabetes" aria-labelledby="label9_diabetes" class="info-checkbox" />
+                            <span class="check"></span>
+                        </label>
+
+                        <label for="hyperTension" class="check1" id="label9_hypertension">Hypertension
+                            <input type="checkbox" id="hyperTension" name="hyperTension" aria-labelledby="label9_hypertension" class="info-checkbox" />
+                            <span class="check"></span>
+                        </label>
+
+                        <label for="arthritis" class="check1" id="label9_arthritis">Arthritis
+                            <input type="checkbox" id="arthritis" name="arthritis" aria-labelledby="label9_arthritis" class="info-checkbox" />
+                            <span class="check"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!--Claim Amount-->
+                <div class="data__input">
+                    <label for="txtClaimAmt" class="data__input--label required" id="label10">Claim
+                        Amount<span>*</span></label>
+                    <input type="text" id="txtClaimAmt" name="txtClaimAmt" aria-labelledby="label10"
+                        class="data__input--box" placeholder="e.g. $ xx,xxx" required />
+                    <div class="data__input--error-cl-amt error" id="data__input--error-cl-amt">
+                        <p aria-labelledby="data__input--error-cl-amt"></p>
+                    </div>
+                </div>
+
+                <!--File upload-->
+                <div class="data__file">
+                    <label class="data__input--label" id="label11">Supporting Documents<span>*</span></label>
+                    <div class="data__upload data__file--upload">
+                        <input type="file" id="docs" name="docs" accept=".pdf,.jpeg,.png,.jpg" class="data__upload--files"
+                            aria-labelledby="label11" multiple />
+                        <label for="docs" id="label11_docs">
+                            
+                            <i class="fas fa-paperclip data__upload--icon" aria-labelledby="label11_docs" width="20px"></i>
+                            Attach Files
+                        </label>
+                        <div class="data__input--error-file error" id="data__input--error-file">
+                            <p aria-labelledby="data__input--error-file"></p>
+                        </div>
+                    </div>
+                    <div id="area" class="data__file--area"></div>
+                </div>
+
+                <!--form button-->
+                <div class="data__btn-container">
+                    <button type="reset" id="cancel" class="data__btn data__btn--cancel" aria-label="Cancel">
+                        Cancel
+                    </button>
+                    <button type="reset" id="add" class="data__btn data__btn--add" aria-label="AddClaim">
+                        Add Claim
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

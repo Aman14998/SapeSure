@@ -1,0 +1,15 @@
+<div id="mydenyModal" class="modal">
+    <div class="modal__content focus-trap">
+        <i class="far fa-times-circle modal__content--icon"></i>
+        <p class="modal__content--paraDeny">Please provide the reason for denying the claim worth <span>$</span><span id="claimAmt"></span> to <span id="claimName"></span></p>
+        <textarea name="comment" id="modal__comment" class="modal__comment" cols="1" rows="6" 
+         placeholder="Please give the reason for claim denial"></textarea>
+        
+        <label class="ErrorMsg">please give reason for denial</label>
+        <div class="modal__btn-container">
+            <button type="reset" id="denyCancelBtn" class="modal__btn modal__btn--cancel-d" aria-label="cancel">Cancel</button>
+            <button type="button" id="denySubmitBtn" class="modal__btn modal__btn--deny" aria-label="deny">Deny Claim</button>
+        </div>
+    </div>
+</div>
+

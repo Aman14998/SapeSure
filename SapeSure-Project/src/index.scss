@@ -1,0 +1,31 @@
+@import './components/header/header.scss';
+@import './components/graph/graph.scss';
+@import './components/search/search.scss';
+@import './components/table/table.scss';
+@import './components/table/lazyLoad.scss';
+@import './components/passPopup/pass.scss';
+@import './components/denyPopup/deny.scss';
+@import './components/AddClaimPopup/add.scss';
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital@1&family=Roboto&display=swap");
+
+$primary-color: white;
+$main-color: #9c106c;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  --thumbBG: #9c106c;
+}
+body::-webkit-scrollbar {
+  width: 9px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--thumbBG);
+  border-radius: 3px;
+}
+

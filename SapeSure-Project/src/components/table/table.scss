@@ -1,0 +1,391 @@
+$primary-color: white;
+$main-color: #9c106c;
+$name-color: rgb(104, 103, 103);
+$primary-text-color: #d3d3d3;
+$table-data-color:rgb(143, 142, 142);
+
+$claim-passed-color: #1d872e;
+$claim-denied-color: #e60000;
+$claim-pending-color: #816C22;
+
+$denied-bg-color: #d6f5ff;
+$denied-color: #0e6b8c;
+
+$passed-bg-color: #ffecf9;
+$passed-color: $main-color;
+
+$pending-bg-color: #fff1bc;
+$pending-second-color: $claim-pending-color;
+$pending-color: $claim-pending-color;
+$focus-color: #26a7de;
+$disable-color: #c568a4;
+$status-size: .75rem;
+
+@mixin lastCol {
+  position: sticky;
+  z-index: 3;
+  right: 0;
+  top: 0;
+}
+
+a:visited,
+a:active,
+a:link{
+  color: #1259e2;
+}
+a:focus{
+  outline: 2px solid $focus-color;
+}
+button:focus{
+  outline: 2px solid $focus-color;
+}
+
+.main {
+  padding: 1% 3%;
+  background-color: #ebecf3;
+  font-family: "Roboto", sans-serif;
+
+  .table::-webkit-scrollbar {
+    width: 0;
+  }
+  .table {
+    position: relative;
+    overflow: scroll;
+    height: 80vh;
+    table {
+      border-collapse: collapse;
+      width: 345%;
+    }
+    thead {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      font-size: 0.7rem;
+    }
+
+    tbody {
+      font-size: 0.62rem;
+      border-right: 1.5px solid $primary-text-color;
+      border-left: 1.5px solid $primary-text-color;
+    }
+
+    th {
+      padding: 0.25rem 0.6rem;
+      background-color: $main-color;
+      color: $primary-color;
+      position: sticky;
+      text-align: left;
+    }
+
+    th:last-child {
+      text-align: center !important;
+      padding: 0 1rem;
+    }
+
+    td:last-child {
+      text-align: center;
+    }
+
+    td {
+      padding: 0.25rem 0.6rem;
+      background-color: $primary-color;
+      color: $name-color;
+      font-weight: 600;
+      border-bottom: 1.2px solid $primary-text-color;
+    }
+  
+    .material-icons {
+      border: none;
+      background-color:inherit;
+      color: $primary-color;
+    }
+    .filter {
+      vertical-align: bottom;
+    }
+
+    .dropdown {
+      &__content {
+        display: inline-block;
+        &:hover {
+          // cursor: pointer;
+          .dropdown__check-list{
+          display: block;
+          }
+        }
+      }
+      &__check {
+        &-list {
+          display: none;
+          position: absolute;
+          background-color: $primary-color;
+          right: 5px;
+          border: 1px solid grey;
+          padding: 2px;
+          border-radius: 4px;
+
+          div {
+            padding: 2px 3px 1px 3px;
+            justify-content: space-between;
+          }
+        }
+        &-box {
+          display: block;
+          position: relative;
+          cursor: pointer;
+          user-select: none;
+          padding-left: 30px;
+          margin: 10px;
+          
+          input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 22px;
+            width: 22px;
+          }
+
+          .dropdown__check--checked {
+            &:after {
+              left: 6px;
+              top: 1px;
+              width: 5px;
+              height: 10px;
+              border: solid $primary-color;
+              border-width: 0 3px 3px 0;
+              transform: rotate(45deg);
+            }
+          }
+        }
+        &--checked {
+          position: absolute;
+          background-color: #fdedfa;
+          top: 0;
+          left: 0;
+          height: 22px;
+          width: 22px;
+          border: 2px solid $main-color;
+
+          &:after {
+            content: "";
+            position: absolute;
+            display: none;
+          }
+        }
+        &--status {
+          border-radius: 4px;
+          display: block;
+          width: 60px;
+          text-align: center;
+          padding: 2.5px;
+          font-size: .8rem;
+        }
+        &--passed {
+          border: 1.5px solid $main-color;
+          background-color: $passed-bg-color;
+          color: $main-color;
+        }
+        &--pending {
+          border: 1.5px solid $pending-color;
+          background-color: $pending-bg-color; 
+          color: $pending-color;
+        }
+        &--denied {
+          border: 1.5px solid $denied-color;
+          background-color: $denied-bg-color;
+          color: $denied-color;
+        }
+      }
+    }
+
+    &__header-title {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: .7rem;
+      .top{
+        bottom: 45%;
+        left: 11%;
+      }
+      .bottom{
+        top: 100%;
+      }
+      .provider-top{
+        bottom: 45%;
+        left: 6%;
+      }
+      .date-top{
+        bottom: 45%;
+        right: 32%;
+      }
+    }
+    &__header-provider{
+      width: 20% !important;
+    }
+    &__header-arrow {
+      display: block;
+      background: $main-color;
+      color: $primary-color;
+      border: none;
+      font-size: .7rem;
+      cursor: pointer;
+    }
+    &__addbtn {
+      background: $primary-color;
+      border: none;
+      padding: 0.25rem 0.3rem;
+      color: $main-color;
+      font-weight: bold;
+      border-radius: 5px;
+      text-align: center;
+      font-size: large;
+      cursor: pointer;
+
+      .pass {
+        right: 87%;
+      }
+      .deny{
+        right: 60%;
+      }
+      .download {
+        right: 40%;
+      }
+
+      &--tooltip {
+        visibility: hidden;
+        width: 5rem;
+        background-color: $primary-color;
+        color: black;
+        text-align: center;
+        border-radius: 3px;
+        padding: 1px 0;
+        font-size: 15px;
+        border: 1px solid black;
+        position: absolute;
+        z-index: 1;
+      }
+    }
+    .add {
+      padding: 0.3rem 1.3rem;
+      font-size: .9rem;
+      font-weight: 700;
+    }
+    
+    .disable {
+      color: $disable-color;
+      cursor: not-allowed;
+    }
+    .amount{
+      &-pending{
+        color: $pending-second-color;
+      }
+      &-passed{
+        color: $claim-passed-color;
+      }
+      &-denied{
+        color: $claim-denied-color;
+      }
+    }
+    .provider__name {
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+  }
+
+}
+
+  .dropdown__check-box:hover input ~ .dropdown__check--checked {
+    background-color: #fdedfa;
+  }
+
+  .dropdown__check-box input:checked ~ .dropdown__check--checked {
+    background-color: $main-color;
+  }
+  .dropdown__check-box input:checked ~ .dropdown__check--checked:after {
+    display: block;
+  }
+  .fas:hover .table__addbtn--tooltip {
+    visibility: visible;
+    font-weight: 400;
+  }
+
+}
+
+
+@media screen and (min-width: 481px) {
+  .main {
+    .table{
+      height: 86.5vh;
+      table {
+        thead tr > :last-child,
+        tbody tr > :last-child {
+          @include lastCol();
+        }
+        width: 170%;
+        thead{
+          font-size: .65rem;
+        }
+      }
+    }
+
+  }
+}
+
+@media screen and (max-width: 620px) and (min-width: 481px) {
+  .main {
+    .table {
+      table {
+        width: 215%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main {
+    .table {
+      table {
+        tbody{
+          font-size: .75rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .main {
+    .table {
+      height: 82vh;
+      table {
+        width: -webkit-fill-available;
+        thead{
+          font-size: .65rem;
+        }
+        tbody{
+          font-size: .62rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and(min-width: 1150px){
+  .main {
+    .table {
+      table {
+        thead{
+          font-size: .7rem;
+        }
+        tbody{
+          font-size: .75rem;
+        }
+      }
+    }
+  }
+}
+
+.far:hover .table__addbtn--tooltip {
+  visibility: visible;
+}

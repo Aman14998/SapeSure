@@ -1,0 +1,14 @@
+$primary-color: white;
+$main-color: #9c106c;
+.header {
+  background: $main-color;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  &__title {
+    color: $primary-color;
+    font-size: 1.1rem;
+    padding: 0.4rem 2rem;
+    font-family: "Poppins", sans-serif;
+  }
+}

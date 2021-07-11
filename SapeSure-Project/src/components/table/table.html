@@ -1,0 +1,116 @@
+<section class="table">
+    <table>
+      <thead class="table__header" id="table-header">
+        <tr>
+          <th scope="col" id="claimId">Claim Id</th>
+          <th scope="col">
+            <div class="table__header-title">
+              Claimant Name
+              <div>
+                <button
+                  class="table__header-arrow ascending-sort sort-claimant-name" 
+                  aria-label="sort ascending for Claimant name"
+                >
+                  <i class="fas fa-chevron-up" aria-hidden="true">
+                    <span class="table__addbtn--tooltip top">Ascending</span>
+                  </i>
+                </button>
+                <button
+                  class="table__header-arrow descending-sort sort-claimant-name"
+                  aria-label="sort descending for Claimant name"
+                >
+                  <i class="fas fa-chevron-down" aria-hidden="true">
+                    <span class="table__addbtn--tooltip bottom">Descending</span>
+                  </i>
+                </button>
+              </div>
+            </div>
+          </th>
+          <th scope="col">Claimant Email</th>
+          <th scope="col" class="table__header-provider">
+            <div class="table__header-title">
+              Provider Name
+              <div>
+                <button
+                  class="table__header-arrow ascending-sort sort-provider-name"
+                  aria-label="sort ascending for provider name"
+                >
+                  <i class="fas fa-chevron-up" aria-hidden="true">
+                    <span class="table__addbtn--tooltip provider-top">Ascending</span></i>
+                </button>
+                <button
+                  class="table__header-arrow descending-sort sort-provider-name"
+                  aria-label="sort descending for provider name"
+                >
+                  <i class="fas fa-chevron-down" aria-hidden="true">
+                    <span class="table__addbtn--tooltip bottom">Descending</span>
+                  </i>
+                </button>
+              </div>
+            </div>
+          </th>
+          <th scope="col">
+            <div class="table__header-title">
+              Claim Date
+              <div>
+                <button
+                class="table__header-arrow ascending-sort sort-claim-date"
+                  aria-label="sort ascending for claim date"
+                >
+                  <i class="fas fa-chevron-up" aria-hidden="true">
+                    <span class="table__addbtn--tooltip date-top">Ascending</span>
+                  </i>
+                </button>
+                <button
+                class="table__header-arrow descending-sort sort-claim-date"
+                  aria-label="sort descending for claim date"
+                >
+                  <i class="fas fa-chevron-down" aria-hidden="true">
+                    <span class="table__addbtn--tooltip bottom">Descending</span>
+                  </i>
+                </button>
+              </div>
+            </div>
+          </th>
+          <th scope="col">$ Approved/Claimed</th>
+          <th scope="col">
+            <div class="table__header-title dropdown">
+              Status
+              <div class="dropdown__content">
+              <button class="material-icons filter" aria-label="dropdown">
+                filter_list
+              </button>
+              <div id="Checklist" class="dropdown__check-list">
+                  <label  for="Passed" class="dropdown__check-box">
+                    <input type="checkbox" id="Passed" class="status-checkbox" name="status" value="passed" checked/>
+                    <span class="dropdown__check dropdown__check--checked"></span>
+                    <span class="dropdown__check dropdown__check--status dropdown__check--passed">Passed</span>
+                  </label>
+
+                  <label  for="Pending" class="dropdown__check-box">
+                    <input type="checkbox" id="Pending" class="status-checkbox" name="status" value="passed" checked/>
+                    <span class="dropdown__check dropdown__check--checked"></span>
+                    <span class="dropdown__check dropdown__check--status dropdown__check--pending">Pending</span>
+                  </label>
+
+                  <label  for="Denied". class="dropdown__check-box">
+                    <input type="checkbox" id="Denied" class="status-checkbox" name="status" value="passed" checked/>
+                    <span class="dropdown__check dropdown__check--checked"></span>
+                    <span class="dropdown__check dropdown__check--status dropdown__check--denied">Denied</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </th>
+          <th scope="col">
+            <button class="table__addbtn add" id="addClaim" aria-label="Add Claim">+Add</button>
+          </th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        
+      </tbody>
+    </table>
+    <div class="spinner loading"></div>
+</section>
+
